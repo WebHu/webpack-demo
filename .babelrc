@@ -1,0 +1,17 @@
+//.babelrc  babel配置文件独立出来，也可以都写在webpack.config.js中（不建议）
+{
+  "presets": ["react", "es2015"],  //es2015 解析es6，react解析react的jsx
+  "env": {
+    "development": {
+      "plugins": [["react-transform", {
+        "transforms": [{
+          "transform": "react-transform-hmr",
+
+          "imports": ["react"],
+
+          "locals": ["module"]
+        }]
+      }]]
+    }
+  }
+}
